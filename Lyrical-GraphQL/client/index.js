@@ -31,7 +31,7 @@
 // ReactDOM.render(
 //   <Root />,
 //   document.querySelector('#root')
-// );
+// )
 
 import './style/style.css';
 import React from 'react';
