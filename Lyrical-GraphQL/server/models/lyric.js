@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 
 const LyricSchema = new Schema({
@@ -14,10 +15,12 @@ LyricSchema.statics.like = function(id) {
   const Lyric = mongoose.model('lyric');
 
   return Lyric.findById(id)
-    .then(lyric => {
+    .then((lyric) => {
       ++lyric.likes;
       return lyric.save();
-    })
-}
+    });
+};
 
-mongoose.model('lyric', LyricSchema);
+const lyric = mongoose.model('lyric', LyricSchema);
+
+module.exports = lyric;

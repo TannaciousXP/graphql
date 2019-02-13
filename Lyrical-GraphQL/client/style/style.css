@@ -12,3 +12,7 @@
   display: flex;
   align-items: center;
 }
+
+.del {
+  color: #F44336 !important;
+}

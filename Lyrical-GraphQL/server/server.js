@@ -8,7 +8,8 @@ const schema = require('./schema/schema');
 const app = express();
 
 // Replace with your mongoLab URI
-const MONGO_URI = 'mongodb://stephen:stephen@ds021182.mlab.com:21182/lyricaldb';
+const MONGO_URI = 'mongodb://pxhtan:pxhtan1@ds151354.mlab.com:51354/lyricaldb';
+// const MONGO_URI = 'mongodb://stephen:stephen@ds021182.mlab.com:21182/lyricaldb';
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
@@ -27,7 +28,9 @@ app.use('/graphql', expressGraphQL({
 
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
+
 const webpackConfig = require('../webpack.config.js');
+
 app.use(webpackMiddleware(webpack(webpackConfig)));
 
 module.exports = app;
